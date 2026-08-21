@@ -7,7 +7,7 @@ if (location.protocol === "http:" && !["localhost", "127.0.0.1"].includes(locati
 const escapeHtml = (value) => String(value).replace(/[&<>"]/g, (character) => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"
 })[character]);
-const articleUrl = (item) => `materia.html?slug=${encodeURIComponent(item.slug)}`;
+const articleUrl = (item) => `materia.html?slug=${encodeURIComponent(item.fileSlug || item.slug)}`;
 const formatDate = (date) => new Intl.DateTimeFormat("pt-BR", {
   day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit"
 }).format(new Date(date));
@@ -19,7 +19,8 @@ async function loadArticles() {
   return Promise.all(files.map(async (file) => {
     const response = await fetch(`content/${file}`, { cache: "no-store" });
     if (!response.ok) throw new Error(`Não foi possível carregar ${file}`);
-    return response.json();
+    const article = await response.json();
+    return { ...article, fileSlug: file.split("/").pop().replace(/\.json$/, "") };
   }));
 }
 
@@ -75,7 +76,7 @@ function renderArticle(article, articles) {
 document.querySelector("#year").textContent = new Date().getFullYear();
 
 loadArticles().then((articles) => {
-  const article = articles.find((item) => item.slug === slug);
+  const article = articles.find((item) => item.slug === slug || item.fileSlug === slug);
   if (article) {
     renderArticle(article, articles);
   } else {

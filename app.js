@@ -9,7 +9,7 @@ const escapeHtml = (value) => String(value).replace(/[&<>"]/g, (character) => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"
 })[character]);
 
-const articleUrl = (article) => `materia.html?slug=${encodeURIComponent(article.slug)}`;
+const articleUrl = (article) => `materia.html?slug=${encodeURIComponent(article.fileSlug || article.slug)}`;
 const formatDate = (date, long = false) => new Intl.DateTimeFormat("pt-BR", long
   ? { weekday: "long", day: "numeric", month: "long", year: "numeric" }
   : { day: "2-digit", month: "short", year: "numeric" }
@@ -22,7 +22,8 @@ async function loadArticles() {
   return Promise.all(files.map(async (file) => {
     const response = await fetch(`content/${file}`, { cache: "no-store" });
     if (!response.ok) throw new Error(`Não foi possível carregar ${file}`);
-    return response.json();
+    const article = await response.json();
+    return { ...article, fileSlug: file.split("/").pop().replace(/\.json$/, "") };
   }));
 }
 
