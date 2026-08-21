@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Noto+Serif+Display:wdth,wght@62.5,400;62.5,600;62.5,700;62.5,800&amp;display=swap" rel="stylesheet">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
   <script src="app.js?v=2" defer></script>
 </head>
 <body>
@@ -45,7 +45,22 @@
     <div class="newsline">
       <div class="shell newsline-inner">
         <strong>Última hora</strong>
-        <p>Comissão aprova texto-base; texto do topo e texto do rodapé serão analisados depois.</p>
+        <div class="ticker" aria-label="Últimas notícias sobre o desenvolvimento do site">
+          <div class="ticker-track" aria-hidden="true">
+            <div class="ticker-group">
+              <span>Comissão aprova texto-base; texto do topo e texto do rodapé serão analisados depois.</span>
+              <span>Redação confirma que o site segue em desenvolvimento e pede que os bugs aguardem sua vez.</span>
+              <span>Nova editoria entra em obras antes mesmo de ser oficialmente inaugurada.</span>
+              <span>Equipe técnica promete versão definitiva assim que descobrir qual era a provisória.</span>
+            </div>
+            <div class="ticker-group">
+              <span>Comissão aprova texto-base; texto do topo e texto do rodapé serão analisados depois.</span>
+              <span>Redação confirma que o site segue em desenvolvimento e pede que os bugs aguardem sua vez.</span>
+              <span>Nova editoria entra em obras antes mesmo de ser oficialmente inaugurada.</span>
+              <span>Equipe técnica promete versão definitiva assim que descobrir qual era a provisória.</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </header>

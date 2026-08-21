@@ -37,10 +37,15 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--main); outline-
 .nav-inner { display: flex; align-items: center; justify-content: center; gap: clamp(20px, 4vw, 52px); min-height: 45px; }
 .nav-inner a { font-family: var(--serif); font-size: 1rem; font-weight: 700; }
 .nav-inner a:hover { color: var(--main); }
-.newsline { background: var(--text); color: var(--background); }
-.newsline-inner { min-height: 39px; display: flex; align-items: center; gap: 20px; font-size: 0.76rem; }
+.newsline { height: 39px; overflow: hidden; background: var(--text); color: var(--background); }
+.newsline-inner { height: 39px; display: flex; align-items: center; gap: 20px; overflow: hidden; font-size: 0.76rem; }
 .newsline strong { flex: none; padding-right: 20px; border-right: 1px solid rgba(255,255,255,.35); color: var(--secondary); text-transform: uppercase; letter-spacing: .08em; }
-.newsline p { margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ticker { width: 0; flex: 1; overflow: hidden; }
+.ticker-track { display: inline-flex; width: max-content; white-space: nowrap; animation: ticker-scroll 42s linear infinite; }
+.ticker-group { display: flex; width: max-content; flex: none; align-items: center; }
+.ticker-group span { display: inline-flex; width: max-content; flex: none; align-items: center; white-space: nowrap; }
+.ticker-group span::after { content: ""; width: 3px; height: 3px; margin-inline: 38px; border-radius: 50%; background: var(--secondary); }
+@keyframes ticker-scroll { to { transform: translateX(-50%); } }
 
 .lead { padding-top: 42px; }
 .section-label { display: flex; align-items: center; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid var(--text); font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
@@ -226,4 +231,5 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--main); outline-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .story-image img { transition: none; }
+  .ticker-track { animation: none; }
 }
