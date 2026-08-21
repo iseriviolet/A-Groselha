@@ -13,11 +13,11 @@ const formatDate = (date) => new Intl.DateTimeFormat("pt-BR", {
 }).format(new Date(date));
 
 async function loadArticles() {
-  const listResponse = await fetch("content/published.json");
+  const listResponse = await fetch("content/published.json", { cache: "no-store" });
   if (!listResponse.ok) throw new Error("Não foi possível carregar a lista de matérias");
   const files = await listResponse.json();
   return Promise.all(files.map(async (file) => {
-    const response = await fetch(`content/${file}`);
+    const response = await fetch(`content/${file}`, { cache: "no-store" });
     if (!response.ok) throw new Error(`Não foi possível carregar ${file}`);
     return response.json();
   }));
