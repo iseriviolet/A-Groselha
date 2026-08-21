@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff9f5">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; upgrade-insecure-requests">
+  <title>Matéria — A Groselha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Noto+Serif+Display:wdth,wght@62.5,400;62.5,600;62.5,700;62.5,800&amp;display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="materia.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="article-header">
+    <div class="utility-bar shell">
+      <a href="index.html">← Voltar para a capa</a>
+      <p>Conteúdo satírico</p>
+    </div>
+    <div class="article-masthead shell">
+      <a class="brand brand-small" href="index.html" aria-label="A Groselha, página inicial">
+        <img src="assets/logo.svg" alt="" width="46" height="46">
+        <span>A Groselha</span>
+      </a>
+      <p>Melhores notícias não-verídicas do Brasil inteiro.</p>
+    </div>
+  </header>
+
+  <main id="conteudo" class="article-page">
+    <article id="article" aria-live="polite"></article>
+    <aside class="related shell" aria-labelledby="related-title">
+      <div class="section-label"><span id="related-title">Leia também</span></div>
+      <div class="related-grid" id="related-grid"></div>
+    </aside>
+  </main>
+
+  <footer class="site-footer article-footer">
+    <div class="shell disclaimer">
+      <p>Esta matéria é ficção satírica. Qualquer semelhança com o noticiário é um problema do noticiário.</p>
+      <p>© <span id="year">2026</span> A Groselha</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A Groselha — Melhores notícias não-verídicas do Brasil inteiro.">
+  <meta name="theme-color" content="#fff9f5">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; upgrade-insecure-requests">
+  <title>A Groselha — Notícias não-verídicas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Noto+Serif+Display:wdth,wght@62.5,400;62.5,600;62.5,700;62.5,800&amp;display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="utility-bar shell">
+      <p id="today">Sexta-feira, 21 de agosto de 2026</p>
+      <p>Brasília, DF</p>
+      <a href="#sobre">Sobre esta publicação</a>
+    </div>
+    <div class="masthead shell">
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <a class="brand" href="index.html" aria-label="A Groselha, página inicial">
+        <img src="assets/logo.svg" alt="" width="62" height="62">
+        <span>A Groselha</span>
+      </a>
+      <p class="motto">Melhores notícias<br>não-verídicas do Brasil inteiro.</p>
+    </div>
+    <nav class="main-nav" id="main-nav" aria-label="Editorias">
+      <div class="shell nav-inner">
+        <a href="index.html">Capa</a>
+        <a href="index.html?categoria=politica#ultimas">Política</a>
+        <a href="index.html?categoria=economia#ultimas">Economia</a>
+        <a href="index.html?categoria=brasil#ultimas">Brasil</a>
+        <a href="index.html?categoria=mundo#ultimas">Mundo</a>
+        <a href="index.html?categoria=cultura#ultimas">Cultura</a>
+        <a href="index.html?categoria=ciencia#ultimas">Ciência</a>
+        <a href="index.html?categoria=tecnologia#ultimas">Tecnologia</a>
+      </div>
+    </nav>
+    <div class="newsline">
+      <div class="shell newsline-inner">
+        <strong>Última hora</strong>
+        <p>Comissão aprova texto-base; texto do topo e texto do rodapé serão analisados depois.</p>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="lead shell" aria-labelledby="lead-title">
+      <div class="section-label"><span>Manchete</span><time datetime="2026-08-21">21.08.2026</time></div>
+      <article class="lead-story" id="lead-story" aria-live="polite"></article>
+      <div class="briefs" id="briefs"></div>
+    </section>
+
+    <section class="latest shell" id="ultimas" aria-labelledby="latest-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Em desenvolvimento</p>
+          <h2 id="latest-title">Últimas apurações</h2>
+        </div>
+        <p id="filter-status">Informação suficiente para formar uma opinião, não necessariamente a correta.</p>
+      </div>
+      <div class="story-grid" id="story-grid"></div>
+    </section>
+
+    <section class="opinion shell" aria-labelledby="opinion-title">
+      <div class="opinion-intro">
+        <p class="eyebrow">Parecer</p>
+        <h2 id="opinion-title">A opinião que faltava. Talvez por um motivo.</h2>
+      </div>
+      <blockquote>
+        <p>“O Brasil não precisa de respostas simples. Precisa de perguntas que caibam em uma manchete e terminem antes do intervalo.”</p>
+        <footer>Conselho editorial, após 11 minutos de deliberação</footer>
+      </blockquote>
+    </section>
+
+    <section class="manifesto" id="sobre" aria-labelledby="about-title">
+      <div class="shell manifesto-inner">
+        <p class="edition-mark">Desde antes dos fatos</p>
+        <div>
+          <p class="eyebrow">Sobre A Groselha</p>
+          <h2 id="about-title">Jornalismo sério demais para ser verdade.</h2>
+        </div>
+        <p>A Groselha observa o noticiário brasileiro pelo ângulo em que tudo continua plausível, mas deixa de ser recomendável citar como fonte. Publicamos sátira com método, pontuação e a devida desconfiança.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-main">
+      <a class="footer-brand" href="index.html">
+        <img src="assets/logo.svg" alt="" width="42" height="42">
+        <span>A Groselha</span>
+      </a>
+      <p>Melhores notícias não-verídicas do Brasil inteiro.</p>
+      <a href="mailto:redacao@agroselha.com.br">redacao@agroselha.com.br</a>
+    </div>
+    <div class="shell disclaimer">
+      <p>Conteúdo satírico e fictício. Não use A Groselha para tomar decisões financeiras, políticas ou sobre o almoço.</p>
+      <p>© <span id="year">2026</span> A Groselha</p>
+    </div>
+  </footer>
+</body>
+</html>
