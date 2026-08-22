@@ -26,7 +26,7 @@ async function loadArticles() {
 
 function art(item) {
   if (item.image) {
-    return `<figure class="article-hero-image"><img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt)}"><figcaption>Imagem: arquivo / A Groselha</figcaption></figure>`;
+    return `<figure class="article-hero-image"><img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt)}"></figure>`;
   }
   return `<div class="article-hero-art tone-${escapeHtml(item.tone || "salmon")}" aria-hidden="true"><span>${escapeHtml(item.art)}</span><i>A Groselha / Arquivo</i></div>`;
 }
