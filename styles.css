@@ -123,16 +123,18 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--main); outline-
 .brand-small img { width: 46px; height: 46px; }
 .brand-small span { font-size: 3.1rem; }
 .article-masthead > p { margin: 0; max-width: 240px; font-family: var(--serif); font-size: .92rem; font-weight: 600; text-align: right; }
-.article-title { max-width: 1050px; padding-top: 78px; text-align: center; }
+.article-hero { min-height: calc(100svh - 133px); display: grid; grid-template-columns: minmax(0, .92fr) minmax(420px, 1.08fr); gap: clamp(42px, 5vw, 84px); align-items: center; padding-block: 48px 56px; }
+.article-title { min-width: 0; max-width: none; padding: 0; text-align: left; }
 .article-title .kicker span { margin-inline: 7px; color: var(--line); }
-.article-title h1 { margin: 0; font-family: var(--serif); font-size: clamp(3.5rem, 7.4vw, 7.2rem); font-weight: 700; line-height: .87; letter-spacing: -.045em; }
-.article-deck { max-width: 790px; margin: 28px auto 0; font-family: var(--serif); font-size: clamp(1.25rem, 2vw, 1.65rem); line-height: 1.4; }
-.article-meta { display: flex; justify-content: center; gap: 28px; margin-top: 32px; font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; }
+.article-title h1 { margin: 0; font-family: var(--serif); font-size: clamp(3rem, 4.4vw, 5.25rem); font-weight: 700; line-height: .92; letter-spacing: -.04em; }
+.article-deck { max-width: 620px; margin: 22px 0 0; font-family: var(--serif); font-size: clamp(1.15rem, 1.55vw, 1.45rem); line-height: 1.38; }
+.article-meta { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 10px 28px; margin-top: 26px; font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; }
 .article-meta p { margin: 0; }
-.article-media { max-width: 1120px; margin-top: 56px; }
-.article-hero-image { margin: 0; height: min(67vw, 690px); overflow: hidden; }
+.article-media { min-width: 0; max-width: none; margin: 0; }
+.article-hero-image { position: relative; margin: 0; height: clamp(390px, 58vh, 610px); overflow: hidden; background: var(--secondary); }
 .article-hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.article-hero-image figcaption { position: absolute; font-size: .63rem; }
+.article-hero-image figcaption { position: absolute; right: 10px; bottom: 8px; padding: 4px 7px; background: rgba(255,249,245,.86); font-size: .63rem; }
+.article-hero .article-hero-art { height: clamp(390px, 58vh, 610px); aspect-ratio: auto; }
 .article-hero-art { position: relative; aspect-ratio: 16/8; display: grid; place-items: center; overflow: hidden; border: 1px solid var(--line); }
 .article-hero-art span { z-index: 1; max-width: 80%; font-family: var(--serif); font-size: clamp(4rem, 10vw, 10rem); font-weight: 800; line-height: .82; letter-spacing: -.05em; text-align: center; }
 .article-hero-art i { position: absolute; right: 32px; bottom: 28px; font-family: var(--serif); font-style: normal; font-weight: 700; }
@@ -179,7 +181,11 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--main); outline-
   .manifesto-inner > p:last-child { grid-column: 2; }
   .footer-main { grid-template-columns: 1fr 1fr; }
   .footer-main > p { display: none; }
-  .article-title { padding-top: 60px; }
+  .article-hero { min-height: 0; grid-template-columns: 1fr; gap: 30px; padding-block: 44px 52px; }
+  .article-title { max-width: 760px; }
+  .article-title h1 { font-size: clamp(3rem, 8vw, 4.8rem); }
+  .article-media { width: 100%; }
+  .article-hero-image, .article-hero .article-hero-art { height: min(58vw, 440px); }
 }
 
 @media (max-width: 620px) {
@@ -216,11 +222,12 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--main); outline-
   .brand-small span { font-size: 2.4rem; }
   .brand-small img { width: 36px; height: 36px; }
   .article-masthead > p { display: none; }
-  .article-title { padding-top: 48px; }
-  .article-title h1 { font-size: 3.6rem; }
-  .article-meta { align-items: center; flex-direction: column; gap: 7px; }
-  .article-media { width: 100%; margin-top: 38px; }
-  .article-hero-image { height: 300px; }
+  .article-hero { gap: 26px; padding-block: 34px 42px; }
+  .article-title h1 { font-size: clamp(2.65rem, 13vw, 3.5rem); }
+  .article-deck { margin-top: 18px; font-size: 1.1rem; }
+  .article-meta { flex-direction: column; gap: 7px; margin-top: 22px; }
+  .article-media { width: 100%; }
+  .article-hero-image, .article-hero .article-hero-art { height: 285px; }
   .article-hero-art { aspect-ratio: 1 / .8; }
   .article-hero-art span { font-size: 4rem; }
   .article-body { grid-template-columns: 1fr; gap: 34px; padding-top: 48px; }

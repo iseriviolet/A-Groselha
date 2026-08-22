@@ -47,16 +47,18 @@ function renderArticle(article, articles) {
   document.title = `${article.title} — A Groselha`;
   document.querySelector('meta[name="theme-color"]').insertAdjacentHTML("afterend", `<meta name="description" content="${escapeHtml(article.summary)}">`);
   document.querySelector("#article").innerHTML = `
-    <header class="article-title shell">
-      <p class="kicker">${escapeHtml(article.category)} <span>/</span> ${escapeHtml(article.kicker)}</p>
-      <h1>${escapeHtml(article.title)}</h1>
-      <p class="article-deck">${escapeHtml(article.summary)}</p>
-      <div class="article-meta">
-        <p>Por <strong>${escapeHtml(article.author)}</strong></p>
-        <p><time datetime="${escapeHtml(article.date)}">${formatDate(article.date)}</time> · ${escapeHtml(article.readingTime)} de leitura</p>
-      </div>
-    </header>
-    <div class="article-media shell">${art(article)}</div>
+    <div class="article-hero shell">
+      <header class="article-title">
+        <p class="kicker">${escapeHtml(article.category)} <span>/</span> ${escapeHtml(article.kicker)}</p>
+        <h1>${escapeHtml(article.title)}</h1>
+        <p class="article-deck">${escapeHtml(article.summary)}</p>
+        <div class="article-meta">
+          <p>Por <strong>${escapeHtml(article.author)}</strong></p>
+          <p><time datetime="${escapeHtml(article.date)}">${formatDate(article.date)}</time> · ${escapeHtml(article.readingTime)} de leitura</p>
+        </div>
+      </header>
+      <div class="article-media">${art(article)}</div>
+    </div>
     <div class="article-body shell">
       <div class="share-note"><span>Compartilhe com responsabilidade editorial mínima.</span></div>
       <div class="prose">${article.body.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}</div>
